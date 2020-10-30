@@ -1,6 +1,6 @@
 from django.db import models
 
-from users.models import Student, Subject
+from subjects.models import Student, Subject
 
 
 class SubjectScore(models.Model):

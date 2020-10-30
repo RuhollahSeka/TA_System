@@ -1,0 +1,21 @@
+from django.db import models
+
+from users.models import Student, Subject
+
+
+class SubjectScore(models.Model):
+    user_profile = models.ForeignKey(
+        to=Student,
+        on_delete=models.CASCADE,
+        verbose_name='حساب کاریری'
+    )
+
+    subject = models.ForeignKey(
+        to=Subject,
+        on_delete=models.CASCADE,
+        verbose_name='درس پاس شده',
+    )
+
+    score = models.PositiveSmallIntegerField(
+        verbose_name='نمره درس',
+    )

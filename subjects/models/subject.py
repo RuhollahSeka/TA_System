@@ -9,8 +9,8 @@ class Subject(models.Model):
     SUMMER_SEMESTER = 'summer'
 
     SEMESTER_CHOICES = (
-        (ODD_SEMESTER, 'ترم فرد'),
-        (EVEN_SEMESTER, 'ترم زوج'),
+        (ODD_SEMESTER, 'ترم پاییز'),
+        (EVEN_SEMESTER, 'ترم بهار'),
         (SUMMER_SEMESTER, 'ترم تابستان'),
     )
 

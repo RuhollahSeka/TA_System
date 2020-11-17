@@ -25,13 +25,13 @@ class Subject(models.Model):
     )
 
     year = models.PositiveSmallIntegerField(
-        verbose_name='سال ارائه شدن درس',
+        verbose_name='سال ارائه‌شدن درس',
     )
 
     semester = models.CharField(
         max_length=8,
         choices=SEMESTER_CHOICES,
-        verbose_name='ترم ارائه شدن درس',
+        verbose_name='ترم ارائه‌شدن درس',
     )
 
     teacher = models.ForeignKey(

@@ -4,13 +4,13 @@ from subjects.models import Teacher
 
 
 class Subject(models.Model):
-    ODD_SEMESTER = 'odd'
-    EVEN_SEMESTER = 'even'
+    FALL_SEMESTER = 'fall'
+    SPRING_SEMESTER = 'spring'
     SUMMER_SEMESTER = 'summer'
 
     SEMESTER_CHOICES = (
-        (ODD_SEMESTER, 'ترم پاییز'),
-        (EVEN_SEMESTER, 'ترم بهار'),
+        (FALL_SEMESTER, 'ترم پاییز'),
+        (SPRING_SEMESTER, 'ترم بهار'),
         (SUMMER_SEMESTER, 'ترم تابستان'),
     )
 

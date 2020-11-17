@@ -13,9 +13,9 @@ class SubjectScore(models.Model):
     subject = models.ForeignKey(
         to=Subject,
         on_delete=models.CASCADE,
-        verbose_name='درس پاس شده',
+        verbose_name='درس پاس‌شده',
     )
 
     score = models.PositiveSmallIntegerField(
-        verbose_name='نمره درس',
+        verbose_name='نمره‌ی درس',
     )

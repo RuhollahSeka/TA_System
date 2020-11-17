@@ -4,7 +4,7 @@ from subjects.models import Student, Subject
 
 
 class SubjectScore(models.Model):
-    user_profile = models.ForeignKey(
+    student = models.ForeignKey(
         to=Student,
         on_delete=models.CASCADE,
         verbose_name='حساب کاریری'

@@ -1,17 +1,17 @@
 from django.db import models
 
-from subjects.models import Student, Subject
+from subjects.models import Student, Course
 
 
-class SubjectScore(models.Model):
+class CourseScore(models.Model):
     student = models.ForeignKey(
         to=Student,
         on_delete=models.CASCADE,
-        verbose_name='حساب کاریری'
+        verbose_name='دانشجو',
     )
 
-    subject = models.ForeignKey(
-        to=Subject,
+    course = models.ForeignKey(
+        to=Course,
         on_delete=models.CASCADE,
         verbose_name='درس پاس‌شده',
     )

@@ -1,9 +1,9 @@
 from django.db import models
 
-from subjects.models import Teacher
+from subjects.models import Lecturer
 
 
-class Subject(models.Model):
+class Course(models.Model):
     FALL_SEMESTER = 'fall'
     SPRING_SEMESTER = 'spring'
     SUMMER_SEMESTER = 'summer'
@@ -19,7 +19,7 @@ class Subject(models.Model):
         verbose_name='نام درس',
     )
 
-    subject_id = models.CharField(
+    course_id = models.CharField(
         max_length=16,
         verbose_name='شناسه درس',
     )
@@ -35,7 +35,7 @@ class Subject(models.Model):
     )
 
     teacher = models.ForeignKey(
-        to=Teacher,
+        to=Lecturer,
         on_delete=models.SET_NULL,
         null=True,
         verbose_name='استاد درس',

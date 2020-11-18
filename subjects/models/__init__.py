@@ -1,4 +1,4 @@
 from .student import Student
-from .teacher import Teacher
-from .subject import Subject
-from .score import SubjectScore
+from .lecturer import Lecturer
+from .course import Course
+from .course_score import CourseScore

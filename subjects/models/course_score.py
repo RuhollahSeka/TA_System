@@ -1,6 +1,7 @@
 from django.db import models
 
-from subjects.models import Student, Course
+from subjects.models import Student
+from ta_procedures.models import Course
 
 
 class CourseScore(models.Model):

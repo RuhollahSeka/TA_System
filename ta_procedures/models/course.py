@@ -47,3 +47,7 @@ class Course(models.Model):
         null=True,
         verbose_name='استاد درس',
     )
+
+    description = models.TextField(
+        verbose_name='توضیحات',
+    )

@@ -18,3 +18,9 @@ class Student(models.Model):
         max_length=16,
         verbose_name='شماره تلفن',
     )
+
+    # TODO add extension validator and double check the path
+    resume = models.FileField(
+        upload_to='files/resume/lecturers/',
+        verbose_name='فایل رزومه استاد',
+    )

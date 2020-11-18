@@ -1,6 +1,6 @@
 from django.db import models
 
-from subjects.models import Lecturer
+from subjects.models import Lecturer, University, Subject
 
 
 class Course(models.Model):
@@ -14,9 +14,16 @@ class Course(models.Model):
         (SUMMER_SEMESTER, 'ترم تابستان'),
     )
 
-    name = models.CharField(
-        max_length=128,
-        verbose_name='نام درس',
+    university = models.ForeignKey(
+        to=University,
+        on_delete=models.CASCADE,
+        verbose_name='دانشکاه',
+    )
+
+    subject = models.ForeignKey(
+        to=Subject,
+        on_delete=models.CASCADE,
+        verbose_name='درس',
     )
 
     course_id = models.CharField(

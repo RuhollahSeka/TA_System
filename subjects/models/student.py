@@ -1,12 +1,20 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from subjects.models import University
+
 
 class Student(models.Model):
     user = models.OneToOneField(
         to=User,
         on_delete=models.CASCADE,
         verbose_name='کاربر',
+    )
+
+    university = models.ForeignKey(
+        to=University,
+        on_delete=models.CASCADE,
+        verbose_name='دانشگاه'
     )
 
     student_id = models.CharField(

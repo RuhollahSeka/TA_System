@@ -29,6 +29,6 @@ class Student(models.Model):
 
     # TODO add extension validator and double check the path
     resume = models.FileField(
-        upload_to='files/resume/lecturers/',
+        upload_to='files/resume/students/',
         verbose_name='فایل رزومه استاد',
     )

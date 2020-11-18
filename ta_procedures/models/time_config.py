@@ -1,8 +1,10 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from _helpers.models import TimeModel
 
-class TimeConfig(models.Model):
+
+class TimeConfig(TimeModel):
 
     user = models.ForeignKey(
         to=User,

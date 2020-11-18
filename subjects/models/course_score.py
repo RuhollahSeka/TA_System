@@ -1,10 +1,11 @@
 from django.db import models
 
+from _helpers.models import TimeModel
 from subjects.models import Student
 from ta_procedures.models import Course
 
 
-class CourseScore(models.Model):
+class CourseScore(TimeModel):
     student = models.ForeignKey(
         to=Student,
         on_delete=models.CASCADE,

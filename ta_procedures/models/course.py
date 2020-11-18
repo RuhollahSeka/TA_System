@@ -1,9 +1,10 @@
 from django.db import models
 
+from _helpers.models import TimeModel
 from subjects.models import Lecturer, University, Subject
 
 
-class Course(models.Model):
+class Course(TimeModel):
     FALL_SEMESTER = 'fall'
     SPRING_SEMESTER = 'spring'
     SUMMER_SEMESTER = 'summer'

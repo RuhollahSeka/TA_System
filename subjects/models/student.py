@@ -1,10 +1,11 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+from _helpers.models import TimeModel
 from subjects.models import University
 
 
-class Student(models.Model):
+class Student(TimeModel):
     user = models.OneToOneField(
         to=User,
         on_delete=models.CASCADE,

@@ -3,7 +3,7 @@ from rest_framework.generics import RetrieveUpdateAPIView
 
 from _helpers.permissions import IsStudent
 from subjects.models import Student
-from subjects.serializers import StudentProfileSerializer
+from subjects.serializers.student_serializers import StudentProfileSerializer
 
 
 class StudentProfileAPIView(RetrieveUpdateAPIView):

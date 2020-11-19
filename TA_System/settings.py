@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework.authtoken',
+
     'subjects',
     'ta_procedures',
 ]
@@ -116,3 +118,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     BASE_DIR / "staticfiles",
 )
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 50,
+}

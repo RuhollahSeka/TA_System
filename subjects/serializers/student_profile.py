@@ -12,6 +12,7 @@ class StudentProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
         fields = (
+            'id',
             'first_name',
             'last_name',
             'username',  # TODO do we need this?
@@ -23,6 +24,7 @@ class StudentProfileSerializer(serializers.ModelSerializer):
         )
 
         read_only_fields = (
+            'id',
             'university',
             'student_id',
         )

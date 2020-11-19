@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 from django.db import models
 
 from _helpers.models import TimeModel
@@ -22,6 +23,9 @@ class Lecturer(TimeModel):
     )
 
     resume = models.FileField(
-        upload_to='files/resume/lecturers/',
+        upload_to='resume/lecturers/',
+        null=True,
+        blank=True,
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])],
         verbose_name='فایل رزومه استاد',
     )

@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core.validators import FileExtensionValidator
 from django.db import models
 
 from _helpers.models import TimeModel
@@ -28,8 +29,10 @@ class Student(TimeModel):
         verbose_name='شماره تلفن',
     )
 
-    # TODO add extension validator and double check the path
     resume = models.FileField(
-        upload_to='files/resume/students/',
+        upload_to='resume/students/',
+        null=True,
+        blank=True,
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])],
         verbose_name='فایل رزومه استاد',
     )

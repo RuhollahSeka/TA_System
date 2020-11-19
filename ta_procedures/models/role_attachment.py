@@ -12,6 +12,8 @@ class RoleAttachment(TimeModel):
     )
 
     attachment = models.FileField(
-        upload_to='files/roles/',
+        upload_to='roles/',
+        null=True,
+        blank=True,
         verbose_name='فایل ضمیمه وظیفه',
     )

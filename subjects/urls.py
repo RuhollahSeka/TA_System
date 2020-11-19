@@ -1,7 +1,8 @@
 from django.urls import path
 
-from subjects import views
+from subjects.views import user_views
 
 urlpatterns = [
-    path('student-profile/', views.StudentProfileAPIView.as_view()),
+    path('student-profile/', user_views.StudentProfileAPIView.as_view()),
+    path('lecturer-profile/', user_views.LecturerProfileAPIView.as_view()),
 ]

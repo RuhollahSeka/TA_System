@@ -1,16 +1,16 @@
 from rest_framework import serializers
 
-from subjects.models import Student
+from subjects.models import Lecturer
 
 
-class StudentProfileSerializer(serializers.ModelSerializer):
+class LecturerProfileSerializer(serializers.ModelSerializer):
     first_name = serializers.CharField(source='user.first_name')
     last_name = serializers.CharField(source='user.last_name')
     username = serializers.CharField(source='user.username')
     email = serializers.CharField(source='user.email')
 
     class Meta:
-        model = Student
+        model = Lecturer
 
         fields = (
             'id',
@@ -20,12 +20,10 @@ class StudentProfileSerializer(serializers.ModelSerializer):
             'email',
             'phone_number',
             'resume',
-            'university',
-            'student_id',
+            'lecturer_id',
         )
 
         read_only_fields = (
             'id',
-            'university',
-            'student_id',
+            'lecturer_id',
         )

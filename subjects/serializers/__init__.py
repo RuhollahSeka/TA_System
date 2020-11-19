@@ -1,1 +1,2 @@
 from .student_profile import StudentProfileSerializer
+from .lecturer_profile import LecturerProfileSerializer

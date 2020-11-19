@@ -1,0 +1,2 @@
+from .student_profile import StudentProfileAPIView
+from .lecturer_profile import LecturerProfileAPIView

@@ -3,13 +3,13 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import ListAPIView
 
 from _helpers.permissions import IsStudent
-from subjects.filters import UniversityFilter
-from subjects.serializers.student_serializers import UniversitySerializer
+from subjects.filters import SubjectFilter
+from subjects.serializers.student_serializers import SubjectSerializer
 
 
-class UniversityAPIView(ListAPIView):
+class SubjectAPIView(ListAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsStudent,)
-    serializer_class = (UniversitySerializer,)
+    serializer_class = SubjectSerializer
     filter_backends = (DjangoFilterBackend,)
-    filterset_class = UniversityFilter
+    filterset_class = SubjectFilter

@@ -25,5 +25,6 @@ class Role(TimeModel):
         to=Student,
         on_delete=models.SET_NULL,
         null=True,
+        blank=True,
         verbose_name='دستیار آموزشی',
     )

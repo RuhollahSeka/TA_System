@@ -8,6 +8,7 @@ class RoleAttachment(TimeModel):
     role = models.ForeignKey(
         to=Role,
         on_delete=models.CASCADE,
+        related_name='attachments',
         verbose_name='وظیقه',
     )
 

@@ -8,5 +8,5 @@ class StudentFilter(django_filters.FilterSet):
     class Meta:
         model = Student
         fields = {
-            'role': ['eq', 'in'],
+            'role': ['exact', 'in'],
         }

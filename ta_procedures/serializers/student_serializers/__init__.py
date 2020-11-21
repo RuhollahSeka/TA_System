@@ -1,1 +1,1 @@
-from .lecturer import LecturerSerializer
+

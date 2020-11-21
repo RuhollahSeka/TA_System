@@ -42,7 +42,7 @@ class Course(TimeModel):
         verbose_name='ترم ارائه‌شدن درس',
     )
 
-    teacher = models.ForeignKey(
+    lecturer = models.ForeignKey(
         to=Lecturer,
         on_delete=models.SET_NULL,
         null=True,

@@ -7,5 +7,5 @@ class SubjectFilter(django_filters.FilterSet):
     class Meta:
         model = Subject
         fields = {
-            'name': ['exact', 'in', 'contains', 'startswith'],
+            'name': ['exact', 'contains', 'startswith'],
         }

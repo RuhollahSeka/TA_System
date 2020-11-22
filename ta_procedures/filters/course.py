@@ -8,7 +8,7 @@ class CourseFilter(django_filters.FilterSet):
         model = Course
         fields = {
             'id': ['exact', 'in'],
-            'course_id': ['exact', 'in', 'contains'],
+            'course_id': ['exact', 'contains', 'startswith'],
             'university': ['exact', 'in'],
             'subject': ['exact', 'in'],
             'lecturer': ['exact', 'in'],

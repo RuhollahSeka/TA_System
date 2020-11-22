@@ -7,5 +7,5 @@ class UniversityFilter(django_filters.FilterSet):
     class Meta:
         model = University
         fields = {
-            'name': ['exact', 'in', 'contains', 'startswith'],
+            'name': ['exact', 'contains', 'startswith'],
         }

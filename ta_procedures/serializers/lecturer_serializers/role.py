@@ -31,9 +31,9 @@ class RoleSerializer(serializers.ModelSerializer):
             'attachments',
         )
 
-    def create(self, validated_data):
+    def save(self, **kwargs):
         with transaction.atomic():
-            role = super().create(validated_data)
+            role = super().save(**kwargs)
             files = self.context['files']
             for file in files.values:
                 RoleAttachment.objects.create(

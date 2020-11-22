@@ -38,7 +38,8 @@ class BaseCourseSerializer(serializers.ModelSerializer):
             'year',
             'semester',
             'lecturer',
-            'lecturer_name',
+            'lecturer_first_name',
+            'lecturer_last_name',
         )
 
 

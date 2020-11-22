@@ -16,6 +16,4 @@ class LecturerFilter(django_filters.FilterSet):
         model = Lecturer
         fields = {
             'id': ['exact', 'in'],
-            'first_name': ['exact', 'contains', 'startswith'],
-            'last_name': ['exact', 'contains', 'startswith'],
         }

@@ -18,8 +18,6 @@ class RoleFilter(django_filters.FilterSet):
         fields = {
             'id': ['exact', 'in'],
             'course': ['exact', 'in'],
-            'course_id': ['exact', 'in', 'contains', 'startswish'],
             'lecturer': ['exact', 'in'],
-            'lecturer_name': ['exact', 'contains', 'startswish'],
             'student': ['isnull'],
         }

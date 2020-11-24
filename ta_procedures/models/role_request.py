@@ -34,3 +34,7 @@ class RoleRequest(TimeModel):
         choices=STATE_CHOICES,
         verbose_name='وضعیت درخواست',
     )
+
+    description = models.TextField(
+        verbose_name='توضیحات',
+    )

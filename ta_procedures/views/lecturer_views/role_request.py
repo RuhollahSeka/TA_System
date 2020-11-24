@@ -18,5 +18,5 @@ class RoleRequestViewSet(ReadOnlyModelViewSet):
     def get_queryset(self):
         lecturer = Lecturer.objects.get(user=self.request.user)
         queryset = super().get_queryset()
-        queryset.filter(role__course__lecturer=lecturer)
+        queryset = queryset.filter(role__course__lecturer=lecturer)
         return queryset

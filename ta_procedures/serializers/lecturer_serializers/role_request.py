@@ -11,9 +11,11 @@ class RoleRequestSerializer(serializers.ModelSerializer):
             'student',
             'role',
             'state',
+            'description',
         )
         read_only_fields = (
             'id',
             'student',
             'role',
+            'description',
         )

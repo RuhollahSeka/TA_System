@@ -20,7 +20,12 @@ class CoursePermission(TimeModel):
         verbose_name='درس',
     )
 
-    ta_add_permission = models.BooleanField(
+    add_ta = models.BooleanField(
         default=False,
         verbose_name='دسترسی انتخاب دستیار',
+    )
+
+    remove_ta = models.BooleanField(
+        default=False,
+        verbose_name='دسترسی حذف دستیار',
     )

@@ -23,15 +23,14 @@ class RecommendationSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         attrs = super().validate(attrs)
-        lecturer = self.context['request'].user.lecturer
+        lecturer = self.context['lecturer']
 
-        if self.instance and lecturer.id != self.instance.course.lecturer_id:
+        if self.instance:
+            return attrs
+
+        course = attrs['course']
+        if course.lecturer_id != lecturer.id:
             raise ValidationError('درس انتخاب شده در لیست دروس شما نمی‌باشد.')
-        if not self.instance:
-            course = attrs['course']
-            if course.lecturer_id != lecturer.id:
-                raise ValidationError('درس انتخاب شده در لیست دروس شما نمی‌باشد.')
-
         return attrs
 
     def update(self, instance, validated_data):

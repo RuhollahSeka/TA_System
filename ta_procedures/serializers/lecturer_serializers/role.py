@@ -58,3 +58,4 @@ class RoleListSerializer(serializers.ModelSerializer):
             'course',
             'student',
         )
+        ref_name = 'LecturerRoleListSerializer'

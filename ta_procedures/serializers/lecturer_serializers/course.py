@@ -53,3 +53,4 @@ class CourseListSerializer(BaseCourseSerializer):
         model = Course
         fields = BaseCourseSerializer.Meta.fields
         read_only_fields = BaseCourseSerializer.Meta.fields
+        ref_name = 'LecturerCourseListSerializer'

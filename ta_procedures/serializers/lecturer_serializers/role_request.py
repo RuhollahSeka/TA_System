@@ -19,3 +19,4 @@ class RoleRequestSerializer(serializers.ModelSerializer):
             'role',
             'description',
         )
+        ref_name = 'LecturerRoleRequestSerializer'

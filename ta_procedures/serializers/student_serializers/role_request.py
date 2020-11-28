@@ -18,6 +18,7 @@ class RoleRequestSerializer(serializers.ModelSerializer):
             'student',
             'state',
         )
+        ref_name = 'StudentRoleRequestSerializer'
 
     def create(self, validated_data):
         student = self.context['student']

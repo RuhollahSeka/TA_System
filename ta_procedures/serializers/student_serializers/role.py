@@ -31,6 +31,7 @@ class RoleListSerializer(BaseRoleSerializer):
         model = Role
         fields = BaseRoleSerializer.Meta.fields
         read_only_fields = BaseRoleSerializer.Meta.fields
+        ref_name = 'StudentRoleListSerializer'
 
 
 class RoleRetrieveSerializer(BaseRoleSerializer):

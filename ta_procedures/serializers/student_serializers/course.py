@@ -48,6 +48,7 @@ class CourseListSerializer(BaseCourseSerializer):
         model = Course
         fields = BaseCourseSerializer.Meta.fields
         read_only_fields = BaseCourseSerializer.Meta.read_only_fields
+        ref_name = 'StudentCourseListSerializer'
 
 
 class CourseRetrieveSerializer(BaseCourseSerializer):

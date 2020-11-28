@@ -22,3 +22,4 @@ class RecommendationSerializer(serializers.ModelSerializer):
             'text',
             'lecturer_name',
         )
+        ref_name = 'StudentRecommendationSerializer'

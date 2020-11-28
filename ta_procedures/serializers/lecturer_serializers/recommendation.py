@@ -20,6 +20,7 @@ class RecommendationSerializer(serializers.ModelSerializer):
             'id',
             'lecturer_name',
         )
+        ref_name = 'LecturerRecommendationSerializer'
 
     def validate(self, attrs):
         attrs = super().validate(attrs)

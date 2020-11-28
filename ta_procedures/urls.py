@@ -1,17 +1,54 @@
 from django.urls import path
+from rest_framework.routers import SimpleRouter
 
 from ta_procedures.views import lecturer_views, student_views
 
-urlpatterns = [
-    # Lecturer views
-    path('lecturers/courses/', lecturer_views.CourseViewSet, name='lecturer-course-v1'),
-    path('lecturers/roles/', lecturer_views.RoleViewSet, name='lecturer-role-v1'),
-    path('lecturers/role-requests/', lecturer_views.RoleRequestViewSet, name='lecturer-role-request-v1'),
-    path('lecturers/recommendations/', lecturer_views.RecommendationViewSet, name='lecturer-recommendation-v1'),
+lecturer_router = SimpleRouter()
+lecturer_router.register(
+    prefix='lecturers/courses',
+    viewset=lecturer_views.CourseViewSet,
+    basename='lecturer-course-v1',
+)
+lecturer_router.register(
+    prefix='lecturers/roles',
+    viewset=lecturer_views.RoleViewSet,
+    basename='lecturer-role-v1',
+)
+lecturer_router.register(
+    prefix='lecturers/role-requests',
+    viewset=lecturer_views.RoleRequestViewSet,
+    basename='lecturer-role-request-v1',
+)
+lecturer_router.register(
+    prefix='lecturer/recommendations',
+    viewset=lecturer_views.RecommendationViewSet,
+    basename='lecturer-recommendation-v1',
+)
 
-    # Student views
-    path('students/courses/', student_views.CourseReadOnlyViewSet, name='student-course-v1'),
-    path('students/roles/', student_views.RoleReadOnlyViewSet, name='student-role-v1'),
-    path('students/role-requests/', student_views.RoleRequestViewSet, name='student-role-request-v1'),
-    path('students/recommendations/', student_views.RecommendationReadOnlyViewSet, name='student-recommendation-v1'),
+student_router = SimpleRouter()
+student_router.register(
+    prefix='students/courses',
+    viewset=student_views.CourseReadOnlyViewSet,
+    basename='student-course-v1',
+)
+student_router.register(
+    prefix='students/roles',
+    viewset=student_views.RoleReadOnlyViewSet,
+    basename='student-role-v1',
+)
+student_router.register(
+    prefix='students/role-requests',
+    viewset=student_views.RoleRequestViewSet,
+    basename='student-role-request-v1',
+)
+student_router.register(
+    prefix='students/recommendations',
+    viewset=student_views.RecommendationReadOnlyViewSet,
+    basename='student-recommendation-v1',
+)
+
+urlpatterns = [
+
 ]
+
+urlpatterns = urlpatterns + lecturer_router.urls + student_router.urls

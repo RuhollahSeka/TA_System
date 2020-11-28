@@ -13,10 +13,10 @@ class CourseAttachmentSerializer(serializers.ModelSerializer):
 
 
 class BaseCourseSerializer(serializers.ModelSerializer):
-    university_name = serializers.CharField(source='university.name')
-    subject_name = serializers.CharField(source='subject.name')
-    lecturer_first_name = serializers.CharField(source='lecturer.user.first_name')
-    lecturer_last_name = serializers.CharField(source='lecturer.user.last_name')
+    university_name = serializers.CharField(source='university.name', read_only=True, label='نام دانشگاه')
+    subject_name = serializers.CharField(source='subject.name', read_only=True, label='نام درس')
+    lecturer_first_name = serializers.CharField(source='lecturer.user.first_name', read_only=True, label='نام استاد')
+    lecturer_last_name = serializers.CharField(source='lecturer.user.last_name', read_only=True)
 
     class Meta:
         fields = (

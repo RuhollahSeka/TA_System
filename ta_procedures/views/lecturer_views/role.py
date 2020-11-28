@@ -16,7 +16,7 @@ class RoleViewSet(ModelViewSet):
     queryset = Role.objects.all()
 
     def get_serializer_class(self):
-        if self.request.method == 'GET' and not self.kwargs:
+        if self.action == 'list':
             return RoleListSerializer
         return RoleSerializer
 

@@ -14,8 +14,8 @@ class CourseAttachmentSerializer(serializers.ModelSerializer):
 
 
 class BaseCourseSerializer(serializers.ModelSerializer):
-    university_name = serializers.CharField(source='university.name')
-    subject_name = serializers.CharField(source='subject.name')
+    university_name = serializers.CharField(source='university.name', read_only=True, label='نام دانشگاه')
+    subject_name = serializers.CharField(source='subject.name', read_only=True, label='نام درس')
 
     class Meta:
         fields = (
@@ -29,7 +29,7 @@ class BaseCourseSerializer(serializers.ModelSerializer):
 
 
 class CourseSerializer(BaseCourseSerializer):
-    attachments = CourseAttachmentSerializer(many=True)
+    attachments = CourseAttachmentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Course

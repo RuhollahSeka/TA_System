@@ -14,7 +14,7 @@ class RoleAttachmentSerializer(serializers.ModelSerializer):
 
 
 class RoleSerializer(serializers.ModelSerializer):
-    attachments = RoleAttachmentSerializer(many=True)
+    attachments = RoleAttachmentSerializer(many=True, read_only=True, label='فایل‌های ضمیمه')
 
     class Meta:
         model = Role

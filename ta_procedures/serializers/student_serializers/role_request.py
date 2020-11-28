@@ -4,6 +4,8 @@ from ta_procedures.models import RoleRequest
 
 
 class RoleRequestSerializer(serializers.ModelSerializer):
+    description = serializers.CharField(required=False, allow_blank=True)
+
     class Meta:
         model = RoleRequest
         fields = (

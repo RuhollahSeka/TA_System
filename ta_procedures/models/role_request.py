@@ -36,5 +36,6 @@ class RoleRequest(TimeModel):
     )
 
     description = models.TextField(
+        blank=True,
         verbose_name='توضیحات',
     )

@@ -20,6 +20,6 @@ class CourseViewSet(mixins.RetrieveModelMixin,
     queryset = Course.objects.all()
 
     def get_serializer_class(self):
-        if self.request.method == 'GET' and not self.kwargs:
+        if self.action == 'list':
             return CourseListSerializer
         return CourseSerializer

@@ -4,6 +4,7 @@ from rest_framework.generics import ListAPIView
 
 from _helpers.permissions import IsStudent
 from subjects.filters import SubjectFilter
+from subjects.models import Subject
 from subjects.serializers.student_serializers import SubjectSerializer
 
 
@@ -13,3 +14,4 @@ class SubjectAPIView(ListAPIView):
     serializer_class = SubjectSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_class = SubjectFilter
+    queryset = Subject.objects.all()

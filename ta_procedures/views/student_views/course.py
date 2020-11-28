@@ -4,6 +4,7 @@ from rest_framework.viewsets import ReadOnlyModelViewSet
 
 from _helpers.permissions import IsStudent
 from ta_procedures.filters import CourseFilter
+from ta_procedures.models import Course
 from ta_procedures.serializers.student_serializers import CourseRetrieveSerializer, CourseListSerializer
 
 
@@ -12,6 +13,7 @@ class CourseReadOnlyViewSet(ReadOnlyModelViewSet):
     permission_classes = (IsStudent,)
     filter_backends = (DjangoFilterBackend,)
     filterset_class = CourseFilter
+    queryset = Course.objects.all()
 
     def get_serializer_class(self):
         if self.kwargs:

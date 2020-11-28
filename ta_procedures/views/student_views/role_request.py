@@ -17,6 +17,7 @@ class RoleRequestViewSet(ModelViewSet):
     serializer_class = RoleRequestSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_class = RoleRequestFilter
+    queryset = RoleRequest.objects.all()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

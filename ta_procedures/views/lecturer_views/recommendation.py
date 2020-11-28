@@ -4,6 +4,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from _helpers.permissions import IsLecturer
 from ta_procedures.filters import RecommendationFilter
+from ta_procedures.models import Recommendation
 from ta_procedures.serializers.lecturer_serializers import RecommendationSerializer
 
 
@@ -13,6 +14,7 @@ class RecommendationViewSet(ModelViewSet):
     serializer_class = RecommendationSerializer
     filter_backends = (DjangoFilterBackend,)
     filterset_class = RecommendationFilter
+    queryset = Recommendation.objects.all()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

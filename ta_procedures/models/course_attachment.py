@@ -16,3 +16,7 @@ class CourseAttachment(TimeModel):
         upload_to='courses/',
         verbose_name='فایل ضمیمه درس',
     )
+
+    class Meta:
+        verbose_name = 'ضمیمه درس'
+        verbose_name_plural = 'ضمیمه‌های دروس'

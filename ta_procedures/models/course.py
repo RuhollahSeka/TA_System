@@ -52,3 +52,7 @@ class Course(TimeModel):
     description = models.TextField(
         verbose_name='توضیحات',
     )
+
+    class Meta:
+        verbose_name = 'درس'
+        verbose_name_plural = 'دروس'

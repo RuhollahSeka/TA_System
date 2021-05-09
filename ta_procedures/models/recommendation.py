@@ -22,3 +22,7 @@ class Recommendation(TimeModel):
     text = models.TextField(
         verbose_name='متن',
     )
+
+    class Meta:
+        verbose_name = 'توصیه'
+        verbose_name_plural = 'توصیه‌ها'

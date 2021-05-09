@@ -16,3 +16,7 @@ class RoleAttachment(TimeModel):
         upload_to='roles/',
         verbose_name='فایل ضمیمه وظیفه',
     )
+
+    class Meta:
+        verbose_name = 'ضمیمه وظیفه'
+        verbose_name_plural = 'ضمایم وظایف'

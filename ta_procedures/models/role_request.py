@@ -39,3 +39,7 @@ class RoleRequest(TimeModel):
         blank=True,
         verbose_name='توضیحات',
     )
+
+    class Meta:
+        verbose_name = 'درخواست وظیفه'
+        verbose_name_plural = 'درخواست‌های وظیفه'

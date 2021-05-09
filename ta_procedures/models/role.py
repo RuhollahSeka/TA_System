@@ -28,3 +28,7 @@ class Role(TimeModel):
         blank=True,
         verbose_name='دستیار آموزشی',
     )
+
+    class Meta:
+        verbose_name = 'وظیفه'
+        verbose_name_plural = 'وظایف'

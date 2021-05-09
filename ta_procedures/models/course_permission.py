@@ -29,3 +29,7 @@ class CoursePermission(TimeModel):
         default=False,
         verbose_name='دسترسی حذف دستیار',
     )
+
+    class Meta:
+        verbose_name = 'دسترسی درس'
+        verbose_name_plural = 'دسترسی‌های دروس'

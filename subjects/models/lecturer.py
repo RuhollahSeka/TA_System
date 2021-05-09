@@ -29,3 +29,7 @@ class Lecturer(TimeModel):
         validators=[FileExtensionValidator(allowed_extensions=['pdf'])],
         verbose_name='فایل رزومه استاد',
     )
+
+    class Meta:
+        verbose_name = 'ارائه‌دهنده'
+        verbose_name_plural = 'ارائه‌دهندگان'

@@ -21,3 +21,7 @@ class CourseScore(TimeModel):
     score = models.PositiveSmallIntegerField(
         verbose_name='نمره‌ی درس',
     )
+
+    class Meta:
+        verbose_name = 'نمره درس'
+        verbose_name_plural = 'نمرات دروس'

@@ -8,3 +8,7 @@ class Subject(TimeModel):
         max_length=128,
         verbose_name='نام درس',
     )
+
+    class Meta:
+        verbose_name = 'عنوان درس'
+        verbose_name_plural = 'عناوین دروس'

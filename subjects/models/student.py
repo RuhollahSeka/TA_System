@@ -70,3 +70,7 @@ class Student(TimeModel):
         ).select_related('course__subject').values('name', 'course__subject__name', 'course_id', 'id')
 
         return roles
+
+    class Meta:
+        verbose_name = 'داتشجو'
+        verbose_name_plural = 'دانشجویان'

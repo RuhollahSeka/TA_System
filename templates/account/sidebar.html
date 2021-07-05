@@ -1,0 +1,129 @@
+{% load static %}
+{% load base_tags %}
+<!-- Main Sidebar Container -->
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="#" class="brand-link">
+        <img src="{% static 'ta_system.png' %}" alt="TA System Logo"
+             class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">TA System</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+                {% if user.profile_image %}
+                    <img src="{{ user.profile_image.url }}"
+                         class="img-circle elevation-2" alt="User Image">
+                {% else %}
+                    <img src="{% static 'images/user.png' %}"
+                         class="img-circle elevation-2" alt="User Image">
+                {% endif %}
+            </div>
+            <div class="info">
+                {% if user.get_full_name %}
+                    <a href="#" class="d-block">{{ user.get_full_name }}</a>
+                {% else %}
+                    <a href="#" class="d-block">{{ user.username }}</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    داشبورد
+                    {% active_link request 'dashboard' 'داشبورد' 'fa-th' %}
+                </li>
+                <li class="nav-item">
+                    پروفایل کابری
+                    {% active_link request 'profile' 'پروفایل کاربری' 'fa-info' %}
+                </li>
+                <li class="nav-item">
+                    تعویض رمز عبور
+                    {% active_link request 'password_change' 'تعویز رمز عبور' 'fa-key' %}
+                </li>
+                {% if user.is_superuser or user.user_type == 'student' %}
+                    <li class="nav-item">
+                        جستجوی درس
+                        {% active_link request 'course-search' 'جستجوی درس' 'fa-search' %}
+                    </li>
+                {% endif %}
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-handshake"></i>
+                        <p>
+                            درس‌ها
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            نقش‌ها
+                            {% active_link request 'courses:roles' 'نقش‌ها' 'fa-list' %}
+                        </li>
+                        {% if user.is_superuser or user.user_type == 'professor' %}
+                            <li class="nav-item">
+                                اجازه دروس
+                                {% active_link request 'courses:permission' 'اجازه دروس' 'fa-list' %}
+                            </li>
+                        {% endif %}
+                    </ul>
+                </li>
+
+                {% if user.is_superuser or user.user_type == 'Professor' %}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-project-diagram"></i>
+                            <p>
+                                توصیه‌نامه‌ها
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                توصیه‌نامه جدید
+                                {% active_link request 'recomms:new-recomm' 'توصیه‌نامه جدید' 'fa-edit' %}
+                            </li>
+                            <li class="nav-item">
+                                لیست توصیه‌نامه‌ها
+                                {% active_link request 'recomms:recomms' 'لیست توصیه‌نامه‌ها' 'fa-list' %}
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
+
+                {% if user.is_superuser %}
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-user"></i>
+                            <p>
+                                مدیریت کاربران
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                اضافه کردن کاربر
+                                {% active_link request 'create-user' 'اضافه کردن کاربر' 'fa-edit' %}
+                            </li>
+                            <li class="nav-item">
+                                کاربران
+                                {% active_link request 'users' 'کاربران' 'fa-list' %}
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

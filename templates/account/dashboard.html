@@ -1,0 +1,113 @@
+{% extends 'account/base.html' %}
+{% block title %}{% block title-meta %} داشبورد {% endblock %} {% endblock %}
+{% block main %}
+    <div class="row">
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h4>پروفایل کاربری</h4>
+
+                    <p>ویرایش پروفایل</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-bag"></i>
+                </div>
+                <a href="{% url 'account:profile' %}" class="small-box-footer">اطلاعات بیشتر<i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h4>تغییر رمز عبور</h4>
+
+                    <p>رمز عبورتان را تغییر دهید</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="{% url 'account:password_change' %}" class="small-box-footer">اطلاعات بیشتر<i
+                        class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        {% if user.is_superuser or user.user_type == 'professor' %}
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-warning">
+                    <div class="inner">
+                        <h4>مدیریت دروس</h4>
+
+                        <p>مدیریت دروس ارائه شده توسط شما</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                    </div>
+                    <a href="{% url 'account:course:courses' %}" class="small-box-footer">اطلاعات بیشتر<i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+        {% endif %}
+        {% if user.is_superuser or user.user_type == 'professor' %}
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h4>مدیریت توصیه‌نامه‌ها</h4>
+
+                        <p>توصیه‌نامه‌های خود را مدیریت کنید</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="{% url 'account:recomm:recomms' %}" class="small-box-footer">اطلاعات بیشتر<i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        {% endif %}
+        {% if user.is_superuser or user.user_type == 'student' %}
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h4>نقش‌ها</h4>
+
+                        <p>نقش‌های خود را مدیریت کنید</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="{% url 'account:roles' %}" class="small-box-footer">اطلاعات بیشتر<i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        {% endif %}
+        {% if user.is_superuser or user.user_type == 'student' %}
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+                <!-- small box -->
+                <div class="small-box bg-danger">
+                    <div class="inner">
+                        <h4>توصیه‌نامه‌ها</h4>
+
+                        <p>نمایش لیست توصیه‌نامه‌های شما</p>
+                    </div>
+                    <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                    </div>
+                    <a href="{% url 'account:recomms' %}" class="small-box-footer">اطلاعات بیشتر<i
+                            class="fas fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <!-- ./col -->
+        {% endif %}
+    </div>
+
+{% endblock %}

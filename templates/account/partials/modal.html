@@ -1,0 +1,45 @@
+{% load crispy_forms_tags %}
+{% load i18n %}
+<div class="modal fade" id="modal-{{ modal_type }}{% if modal_type != 'Create'%}-{{ object.pk }}{% endif %}" tabindex="-1" role="dialog"
+     aria-labelledby="ModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">{{ modal_type }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% if modal_type == 'Delete' %}
+                    {% get_current_language_bidi as LANGUAGE_BIDI %}
+                    {% trans 'Are you sure you want to delete' %} {{ object }} {% if LANGUAGE_BIDI == 0 %} ? {% endif %}
+                {% else %}
+                    {% if modal_type == 'Update' %}
+                        <form method="post" action="{% url action_url object.pk %}">
+                    {% else %}
+                        <form method='post' action="{% url action_url %}">
+                    {% endif %}
+                    {% csrf_token %}
+                    {% crispy form %}
+                    <button type="button" class="btn btn-secondary mr-auto ml-0"
+                            data-dismiss="modal">{% trans 'Close' %}
+                    </button>
+                    </form>
+                {% endif %}
+            </div>
+            <div class="modal-footer">
+                {% if modal_type == 'Delete' %}
+                    <button type="button" class="btn btn-secondary mr-auto ml-0"
+                            data-dismiss="modal">{% trans 'Close' %}
+                    </button>
+                    <form method="post" action="{% url action_url object.pk %}">
+                        {% csrf_token %}
+                        <input type="submit" value="{% trans 'Yes' %}" class="btn btn-danger">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
